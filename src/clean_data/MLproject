@@ -1,0 +1,29 @@
+name: clean
+conda_env: conda.yml
+
+entry_points:
+  main:
+    parameters:
+
+      input_artifact:
+        description: Name of the input artifact
+        type: string
+
+      output_artifact:
+        description: Name of cleaned file
+        type: string
+
+      output_type:
+        description: Type of the cleaned file
+        type: string
+
+      output_description:
+        description: Description of the cleaned file
+        type: string
+
+      col_names:
+        description: Comma separated list of column names
+        type: string
+
+    command: >-
+        python run.py {input_artifact} {output_artifact} {output_type} {output_description} {col_names}

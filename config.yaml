@@ -7,3 +7,9 @@ download:
   artifact_name: "iris.data"
   artifact_type: "raw_data"
   artifact_description: "raw file as downloaded"
+clean:
+  input_artifact: "iris.data:latest"
+  output_artifact: "iris.csv"
+  output_type: "clean_data"
+  output_description: "cleaned data"
+  col_names: "sepal_length,sepal_width,petal_length,petal_width,species"

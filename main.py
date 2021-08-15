@@ -5,6 +5,7 @@ import yaml
 
 _steps = [
     "download",
+    "clean",
 ]
 
 
@@ -25,6 +26,19 @@ def go(config: dict):
                 "artifact_name": config["download"]["artifact_name"],
                 "artifact_type": config["download"]["artifact_type"],
                 "artifact_description": config["download"]["artifact_description"],
+            },
+        )
+
+    if "clean" in active_steps:
+        _ = mlflow.run(
+            os.path.join("src", "clean_data"),
+            "main",
+            parameters={
+                "input_artifact": config["clean"]["input_artifact"],
+                "output_artifact": config["clean"]["output_artifact"],
+                "output_type": config["clean"]["output_type"],
+                "output_description": config["clean"]["output_description"],
+                "col_names": config["clean"]["col_names"],
             },
         )
 
