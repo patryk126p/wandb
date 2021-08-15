@@ -14,7 +14,7 @@ logger = logging.getLogger()
 
 
 def go(args):
-    run = wandb.init(job_type="basic_cleaning")
+    run = wandb.init(job_type="clean")
     run.config.update(args)
 
     col_names = args.col_names.split(",")
