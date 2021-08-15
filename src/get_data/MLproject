@@ -1,0 +1,24 @@
+name: download_file
+conda_env: conda.yml
+
+entry_points:
+  main:
+    parameters:
+
+      uri:
+        description: URI of file to download
+        type: string
+
+      artifact_name:
+        description: Name of the downloaded file
+        type: string
+
+      artifact_type:
+        description: Type of the downloaded file
+        type: string
+
+      artifact_description:
+        description: Description of the downloaded file
+        type: string
+
+    command: "python run.py {uri} {artifact_name} {artifact_type} {artifact_description}"

@@ -1,0 +1,9 @@
+main:
+  project_name: "iris_demo"
+  experiment_name: "development"
+  steps: "all"
+download:
+  uri: "https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data"
+  artifact_name: "iris.data"
+  artifact_type: "raw_data"
+  artifact_description: "raw file as downloaded"
