@@ -6,9 +6,8 @@ import logging
 import os
 
 import pandas as pd
-from sklearn.model_selection import train_test_split
-
 import wandb
+from sklearn.model_selection import train_test_split
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)-15s %(message)s")
 logger = logging.getLogger()

@@ -6,7 +6,6 @@ import logging
 import os
 
 import requests
-
 import wandb
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)-15s %(message)s")
