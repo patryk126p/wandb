@@ -1,0 +1,20 @@
+name: test
+conda_env: conda.yml
+
+entry_points:
+  main:
+    parameters:
+
+      test_data:
+        description: Name of test dataset artifact
+        type: string
+
+      target:
+        description: Name of target variable
+        type: string
+
+      model:
+        description: Name of model artifact
+        type: string
+
+    command: "python run.py {test_data} {target} {model}"

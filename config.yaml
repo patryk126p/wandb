@@ -23,3 +23,7 @@ train:
   target: "species"
   model_config: "model_config.json"
   model_name: "model.joblib"
+test:
+  test_data: "iris_test.csv:latest"
+  target: "species"
+  model: "model.joblib:latest"
