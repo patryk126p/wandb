@@ -7,6 +7,7 @@ _steps = [
     "download",
     "clean",
     "split",
+    "train",
 ]
 
 
@@ -52,6 +53,18 @@ def go(config: dict):
                 "test_size": config["split"]["test_size"],
                 "random_seed": config["split"]["random_seed"],
                 "file_names": config["split"]["file_names"],
+            },
+        )
+
+    if "train" in active_steps:
+        _ = mlflow.run(
+            os.path.join("src", "train_model"),
+            "main",
+            parameters={
+                "train_data": config["train"]["train_data"],
+                "target": config["train"]["target"],
+                "model_config": config["train"]["model_config"],
+                "model_name": config["train"]["model_name"],
             },
         )
 

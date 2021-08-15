@@ -18,3 +18,8 @@ split:
   test_size: 0.3
   random_seed: 42
   file_names: "iris_train.csv,iris_test.csv"
+train:
+  train_data: "iris_train.csv:latest"
+  target: "species"
+  model_config: "model_config.json"
+  model_name: "model.joblib"
